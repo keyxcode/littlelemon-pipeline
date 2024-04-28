@@ -25,6 +25,7 @@ def reservations(request):
     return render(request, "bookings.html", {"bookings": booking_json})
 
 
+@csrf_exempt
 def book(request):
     form = BookingForm()
     if request.method == "POST":
