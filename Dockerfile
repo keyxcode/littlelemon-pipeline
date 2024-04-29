@@ -1,15 +1,16 @@
-FROM python:alpine3.9
+FROM python:3.9-alpine
 
 WORKDIR /usr/src/app/
 EXPOSE 8000
 
-RUN pip install --upgrade pip && pip install pipenv
-COPY Pipfile* ./
-RUN pipenv install --system
+RUN apk update && \
+    apk add --no-cache python3 python3-dev py3-pip && \
+    pip3 install --upgrade pip
+COPY requirements.txt ./
+RUN pip install -r requirements.txt
 
 COPY . .
 
-RUN python3 manage.py makemigrations
 RUN python3 manage.py migrate
 
 CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
