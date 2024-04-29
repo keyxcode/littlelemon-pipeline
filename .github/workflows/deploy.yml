@@ -28,7 +28,7 @@ jobs:
         with:
           push: true
           tags: keyxcode/littlelemon-pipeline:latest
-          secrets: |
+          build-args: |
             "DB_CONNECTION=${{ secrets.DB_CONNECTION }}"
 
   deploy:
