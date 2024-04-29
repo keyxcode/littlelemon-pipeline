@@ -22,12 +22,14 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      # Builds devopsdockeruh/docker-hy.github.io
+      # Builds keyxcode/littlelemon-pipeline
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
           push: true
           tags: keyxcode/littlelemon-pipeline:latest
+          secrets: |
+            "DB_CONNECTION=${{ secrets.DB_CONNECTION }}"
 
   deploy:
     name: Deploy new image on Render
