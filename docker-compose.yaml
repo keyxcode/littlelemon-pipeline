@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  web:
+    build:
+      context: .
+      args:
+        - DB_CONNECTION=${DB_CONNECTION}
+    container_name: littlelemon-web
+    ports:
+      - 8000:8000

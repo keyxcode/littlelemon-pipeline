@@ -10,7 +10,7 @@ COPY requirements.txt ./
 RUN pip install -r requirements.txt
 
 ARG DB_CONNECTION
-ENV DB_CONNECTION ${DB_CONNECTION}
+ENV DB_CONNECTION $DB_CONNECTION
 COPY . .
 
 RUN python3 manage.py migrate
