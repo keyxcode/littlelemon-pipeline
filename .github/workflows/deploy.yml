@@ -1,4 +1,4 @@
-name: Release Express app # Name of the workflow
+name: Release Littlelemon app # Name of the workflow
 
 # On a push to the branch named main
 on:

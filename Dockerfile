@@ -13,4 +13,4 @@ ARG DB_CONNECTION
 ENV DB_CONNECTION $DB_CONNECTION
 COPY . .
 
-CMD python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000
+CMD python3 manage.py loaddata menu_items.json && python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000

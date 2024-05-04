@@ -1,0 +1,38 @@
+[
+  {
+    "model": "restaurant.menu",
+    "pk": 1,
+    "fields": {
+      "name": "Bruschetta",
+      "price": 8,
+      "menu_item_description": "Crisp fluffy bruschetta bread, topped with melted parmesan cheese, diced roma tomatoes, and freshly cut basil."
+    }
+  },
+  {
+    "model": "restaurant.menu",
+    "pk": 2,
+    "fields": {
+      "name": "Grilled fish",
+      "price": 24,
+      "menu_item_description": "Fresh salmon, grilled to perfection, seasoned with lemon, black pepper, and rosemary."
+    }
+  },
+  {
+    "model": "restaurant.menu",
+    "pk": 3,
+    "fields": {
+      "name": "Lemon dessert",
+      "price": 8,
+      "menu_item_description": "Fluffy layered lemon cheesecake topped with whipped cream."
+    }
+  },
+  {
+    "model": "restaurant.menu",
+    "pk": 4,
+    "fields": {
+      "name": "Greek salad",
+      "price": 10,
+      "menu_item_description": "Fresh greek salad with tomato, olive, bell pepper, red onion, feta cheese, and cucumber."
+    }
+  }
+]
