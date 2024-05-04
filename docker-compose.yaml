@@ -1,11 +1,37 @@
 version: "3.8"
 
 services:
-  web:
+  django-dev:
     build:
       context: .
       args:
-        - DB_CONNECTION=${DB_CONNECTION}
-    container_name: littlelemon-web
+        - DB_CONNECTION=postgres://postgres:postgres@db:5432/postgres
     ports:
       - 8000:8000
+    volumes:
+      - ./:/usr/src/app/
+    container_name: django-dev
+    depends_on:
+      - db
+    networks:
+      - mynet
+
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - database:/var/lib/postgresql/data
+    container_name: db
+    networks:
+      - mynet
+
+networks:
+  mynet:
+    driver: bridge
+
+volumes:
+  database:
